@@ -1,0 +1,15 @@
+<p>payment-services works!</p>
+<button (click)="onClick($event)" *ngIf="showGoBack" id="back" class="btn btn-primary">უკან</button>
+<button (click)="onClick($event)" *ngIf="showMobile" id="mobile">მობილური</button>
+<button (click)="onClick($event)" *ngIf="showCharity" id="charity">ქველმოქმედება</button>
+<button (click)="onClick($event)" *ngIf="showUtility" id="utility">კომუნალური</button>
+<button (click)="onClick($event)" *ngIf="showBank" id="bank">ფინანსური მომსახურება</button>
+<button (click)="onPay()" *ngIf="isPaymentReady()">გადახდა</button>
+<app-mobile *ngIf="showMobileNumberComponent" (phoneNumberChangeEvent)="onPhoneNumberChangeEvent($event)"></app-mobile>
+<app-personal-number *ngIf="showPersonalNumberComponent" (personalNumberChangedEvent)="onPersonalNumberChangeEvent($event)" ></app-personal-number>
+<app-account-number *ngIf="showAccountNumberComponent" (accountNumberChangedEvent)="onAccountNumberChangeEvent($event)"></app-account-number>
+<app-amount *ngIf="showAmountComponent" (amountChangeEvent)="onAmountChangeEvent($event)"></app-amount>
+<app-message *ngIf="showMessageComponent" [message]="message"></app-message>
+
+
+
